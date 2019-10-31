@@ -10,13 +10,13 @@ import {
   Renderer2,
   ViewChild
 } from '@angular/core';
-import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
-import {AngularEditorConfig, angularEditorConfig} from './config';
-import {AngularEditorToolbarComponent} from './angular-editor-toolbar.component';
-import {AngularEditorService} from './angular-editor.service';
-import {DOCUMENT} from '@angular/common';
-import {DomSanitizer} from '@angular/platform-browser';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { AngularEditorService } from './angular-editor.service';
+import { DOCUMENT } from '@angular/common';
+import { DomSanitizer } from '@angular/platform-browser';
 import { SecurityContext } from '@angular/core';
+import { AngularEditorToolbarComponent } from './angular-editor-toolbar.component';
+import { AngularEditorConfig, angularEditorConfig } from './config';
 
 @Component({
   selector: 'angular-editor',
@@ -45,9 +45,9 @@ export class AngularEditorComponent implements OnInit, ControlValueAccessor, Aft
 
   @Output() html;
 
-  @ViewChild('editor') textArea: any;
-  @ViewChild('editorWrapper') editorWrapper: any;
-  @ViewChild('editorToolbar') editorToolbar: AngularEditorToolbarComponent;
+  @ViewChild('editor', {static: false}) textArea: any;
+  @ViewChild('editorWrapper', { static: false } ) editorWrapper: any;
+  @ViewChild('editorToolbar', { static: false } ) editorToolbar: AngularEditorToolbarComponent;
 
   @Output() viewMode = new EventEmitter<boolean>();
 

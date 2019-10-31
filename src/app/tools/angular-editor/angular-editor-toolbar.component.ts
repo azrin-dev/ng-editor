@@ -40,7 +40,7 @@ export class AngularEditorToolbarComponent {
 
   @Output() execute: EventEmitter<string> = new EventEmitter<string>();
 
-  @ViewChild('fileInput') myInputFile: ElementRef;
+  @ViewChild('fileInput', { static: false } ) myInputFile: ElementRef;
 
   public get isLinkButtonDisabled(): boolean {
     return this.htmlMode || !Boolean(this.editorService.selectedText);

@@ -1,0 +1,31 @@
+import { NgModule} from '@angular/core';
+import { AngularEditorToolbarComponent} from './angular-editor-toolbar.component';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { CommonModule} from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
+import { AngularEditorComponent } from './angular-editor.component';
+import { AngularEditorService } from './angular-editor.service';
+
+@NgModule({
+
+   declarations: [
+      AngularEditorComponent,
+      AngularEditorToolbarComponent
+   ],
+  imports: [
+      CommonModule, 
+      FormsModule, 
+      ReactiveFormsModule,
+      HttpClientModule
+   ],
+  exports: [
+      CommonModule, 
+      FormsModule, 
+      ReactiveFormsModule,
+      HttpClientModule
+   ],
+   providers: [
+      AngularEditorService
+   ]
+})
+export class AngularEditorModule { }
